@@ -1,0 +1,30 @@
+{
+  "name": "flogger",
+  "description": "a dbrickashaw fluentd forwarder.",
+  "version": "1.0.0",
+  "author": "Trevor Livingston <tlivings@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tlivings/flogger.git"
+  },
+  "bugs": "http://github.com/tlivings/flogger/issues",
+  "dependencies": {
+    "babel-runtime": "^4.3.0",
+    "callermodule": "^2.0.0",
+    "dbrickashaw": "^5.0.3",
+    "fluent-logger": "^0.2.6"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "tape": "^3.5.0",
+    "babel": "^4.3.0",
+    "glob": "^4.4.1"
+  },
+  "scripts": {
+    "prepublish": "npm run compile",
+    "test": "npm run compile && babel-node test/harness.js test/**/*.js",
+    "compile": "babel --optional selfContained --modules common --out-dir dist index.js"
+  },
+  "main": "./index"
+}
