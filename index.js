@@ -13,9 +13,12 @@ const publisher = Dshaw.getPublisher();
 
 export default Object.assign(new EventEmitter(), {
 
-    init({host = 'localhost', port = 24224, timeout = 3.0} = {}) {
-        var {name, version} = Callermodule();
+    init({host = 'localhost', port = 24224, timeout = 3.0, name, version} = {}) {
+        var caller = Callermodule();
         var self = this;
+
+        name = name || caller.name;
+        version = version || caller.version;
 
         FluentLogger.configure(name, {
             host: host,

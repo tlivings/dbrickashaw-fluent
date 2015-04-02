@@ -16,6 +16,11 @@ Supported options:
 - `port` - td-agent port, defaults to `24224`.
 - `timeout` - td-agent timeout, defaults to `3.0` seconds.
 
+and in optionally:
+
+- `name` - appname override, defaults to `init()` caller's name.
+- `version` - version override of caller.
+
 ### Example
 
 ```javascript
