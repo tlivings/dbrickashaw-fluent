@@ -31,8 +31,8 @@ import Dshaw from 'dbrickashaw';
 
 let logger = Dshaw.createLogger();
 
-logger.log(['login', 'ab'], {
+logger.info(['login', 'ab'], {
     action: 'submit',
     user: 'testuser'
-}, 'debug');
+});
 ```

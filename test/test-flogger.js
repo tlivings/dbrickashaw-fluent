@@ -30,10 +30,10 @@ Test('test', function (t) {
 
         let logger = Dshaw.createLogger();
 
-        logger.log(['login', 'ab'], {
+        logger.debug(['login', 'ab'], {
             action: 'submit',
             user: 'testuser'
-        }, 'debug');
+        });
     });
 
 });
