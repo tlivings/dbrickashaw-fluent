@@ -6,9 +6,9 @@ import Dshaw from 'dbrickashaw';
 import Pkg from '../package.json';
 import Path from 'path';
 
-Test.only('test', function (t) {
+Test.only('dbrickashaw-fluent', function (t) {
 
-    t.test('plan', function (t) {
+    t.test('log', function (t) {
         FluentLogger.init({
             name: 'testapp',
             version: '1.0.0'
