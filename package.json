@@ -1,13 +1,13 @@
 {
-  "name": "flogger",
+  "name": "dbrickashaw-fluent",
   "description": "a dbrickashaw fluentd forwarder.",
   "version": "1.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tlivings/flogger.git"
+    "url": "git://github.com/tlivings/dbrickashaw-fluent.git"
   },
-  "bugs": "http://github.com/tlivings/flogger/issues",
+  "bugs": "http://github.com/tlivings/dbrickashaw-fluent/issues",
   "dependencies": {
     "babel-runtime": "^4.3.0",
     "callermodule": "^2.0.0",

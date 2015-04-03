@@ -1,24 +1,24 @@
 'use strict';
 
 import Test from 'tape';
-import Flogger from '..';
+import FluentLogger from '..';
 import Dshaw from 'dbrickashaw';
 import Pkg from '../package.json';
 import Path from 'path';
 
-Test('test', function (t) {
+Test.only('test', function (t) {
 
     t.test('plan', function (t) {
-        Flogger.init({
+        FluentLogger.init({
             name: 'testapp',
             version: '1.0.0'
         });
 
         //Remove publisher
-        Flogger.removeAllListeners('log');
+        FluentLogger.removeAllListeners('log');
 
-        Flogger.on('log', function (source, data, time) {
-            t.strictEqual(source, 'flogger', 'source is correct.');
+        FluentLogger.on('log', function (source, data, time) {
+            t.strictEqual(source, 'dbrickashaw-fluent', 'source is correct.');
             t.ok(typeof data === 'object', 'data is object.');
             t.strictEqual(data.version, '1.0.0', 'version is correct.');
             t.strictEqual(data.source, Pkg.name + '@' + Pkg.version + ':' + Path.relative(process.cwd(), __filename), 'version is correct.');
@@ -29,10 +29,6 @@ Test('test', function (t) {
             t.ok(data.tags.indexOf('ab') > -1, 'tags contains ab.');
             t.ok(data.tags.indexOf('debug') > -1, 'tags contains debug.');
             t.end();
-
-            // setTimeout(function () {
-            //     process.exit();
-            // }, 3000);
         });
 
         let logger = Dshaw.createLogger();

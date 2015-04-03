@@ -1,13 +1,13 @@
-# flogger
+# dbrickashaw-fluent
 
-`flogger` is a publisher for [dbrickashaw](https://github.com/totherik/dbrickashaw) `log` events.
+`dbrickashaw-fluent` is a publisher for [dbrickashaw](https://github.com/totherik/dbrickashaw) `log` events.
 
 ### Configuration
 
 ```javascript
-import Flogger from 'flogger';
+import FluentLogger from 'dbrickashaw-fluent';
 
-Flogger.init(/*options*/);
+FluentLogger.init(/*options*/);
 ```
 
 Supported options:
@@ -25,9 +25,9 @@ and in optionally:
 
 ```javascript
 //the app
-import Flogger from 'flogger';
+import FluentLogger from 'dbrickashaw-fluent';
 
-Flogger.init();
+FluentLogger.init();
 ```
 
 ```javascript

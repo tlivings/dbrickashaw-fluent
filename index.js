@@ -17,10 +17,7 @@ export default Object.assign(new EventEmitter(), {
         var caller = Callermodule();
         var self = this;
 
-        name = name || caller.name;
-        version = version || caller.version;
-
-        FluentLogger.configure(name, {
+        FluentLogger.configure(name || caller.name, {
             host: host,
             port: port,
             timeout: timeout,
@@ -35,7 +32,7 @@ export default Object.assign(new EventEmitter(), {
             }
 
             let payload = Util._extend(data, {
-                version: version,
+                version: version || caller.version,
                 source: source.name,
                 tags: Array.isArray(tags) ? tags : []
             });
